@@ -1,17 +1,11 @@
 Learn::Application.routes.draw do
-  
-  resources :users
-
-
-  resources :comments
-
-
-  resources :photos
-
 
   root :to => 'ads#index'
 
-  resources :ads
+  resources :ads do
+    resources :photos, :comments
+  end
+  resources :users
 
 
   # The priority is based upon order of creation:

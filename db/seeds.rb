@@ -7,4 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-ads = Ad.create([{make: 'Honda'}, {make: 'Mercedes'}, {make: 'Audi'}])
+
+
+ads = Ad.create([
+	{make: 'Honda'}, 
+	{make: 'Mercedes'}, 
+	{make: 'Audi'}
+])
+
+comm = Comment.create(
+	text: 'hey, this is a nifty comment!'
+)
+
+comm.ad = ads.first

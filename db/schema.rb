@@ -11,12 +11,54 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603130331) do
+ActiveRecord::Schema.define(:version => 20130604211038) do
 
   create_table "ads", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "make"
+    t.integer  "user_id"
+  end
+
+  add_index "ads", ["user_id"], :name => "index_ads_on_user_id"
+
+  create_table "comments", :force => true do |t|
+    t.string   "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "ad_id"
+    t.integer  "user_id"
+  end
+
+  add_index "comments", ["ad_id"], :name => "index_comments_on_ad_id"
+  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
+
+  create_table "favorites", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "ad_id"
+    t.integer  "user_id"
+  end
+
+  add_index "favorites", ["ad_id"], :name => "index_favorites_on_ad_id"
+  add_index "favorites", ["user_id"], :name => "index_favorites_on_user_id"
+
+  create_table "photos", :force => true do |t|
+    t.string   "caption"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "ad_id"
+    t.integer  "user_id"
+  end
+
+  add_index "photos", ["ad_id"], :name => "index_photos_on_ad_id"
+  add_index "photos", ["user_id"], :name => "index_photos_on_user_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
