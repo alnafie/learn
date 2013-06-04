@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-ads = Ad.create([{make: 'Honda'}, {make: 'Mercedes'}])
+ads = Ad.create([{make: 'Honda'}, {make: 'Mercedes'}, {make: 'Audi'}])

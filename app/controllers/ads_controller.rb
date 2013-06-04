@@ -7,4 +7,9 @@ class AdsController < ApplicationController
 		respond_with(@ads)
 	end
 
+	def show
+		@ad = Ad.find(params[:id])
+		respond_with(@ad)
+	end
+
 end
