@@ -9,7 +9,7 @@ class Ad < ActiveRecord::Base
   
   #has_many :users, :through => :favorites # a many-to-many relationship
 
-  has_many :likers, :through => :favorites, :source => :user 	# SUCCESS!!
+  has_many :favorite_users, :through => :favorites, :source => :user 	# SUCCESS!!
 
 
 end

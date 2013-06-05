@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :favorites
   #has_many :ads, :through => :favorites #not sure if needed
 
-  #has_many :favorites, :through => :favorites, :source => :ad
+  has_many :favorite_ads, :through => :favorites, :source => :ad
 
 
 end
