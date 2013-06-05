@@ -12,4 +12,11 @@ class AdsController < ApplicationController
 		respond_with(@ad)
 	end
 
+	def new
+		@ad = Ad.new
+	end
+
+	def create
+	end
+
 end
