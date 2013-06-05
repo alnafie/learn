@@ -7,16 +7,24 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+@user = User.create(name: 'talal', email: 'talal@foo.com')
 
+@ad = Ad.create(make: 'Honda')
+@ad.user = @user
+@ad.save
 
-ads = Ad.create([
-	{make: 'Honda'}, 
-	{make: 'Mercedes'}, 
-	{make: 'Audi'}
-])
+#Comment.create(text: 'hey, this is a nifty comment!', ad: ads.first)
+@com = Comment.create(text: 'hey, this is a nifty comment!')
+@com.ad = @ad
+@com.user = @user
+@com.save
 
-comm = Comment.create(
-	text: 'hey, this is a nifty comment!'
-)
+@photo = Photo.create(caption: 'photo of a lion')
+@photo.ad = @ad
+@photo.user = @user
+@photo.save
 
-comm.ad = ads.first
+@fave = Favorite.create
+@fave.ad = @ad
+@fave.user = @user
+@fave.save
