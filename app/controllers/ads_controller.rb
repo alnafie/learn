@@ -13,10 +13,10 @@ class AdsController < ApplicationController
 	end
 
 	def new
-		@ad = Ad.new
-		3.times do 
-			comment = @ad.comments.build
-		end
+		# @ad = Ad.new
+		# 3.times do 
+		# 	comment = @ad.comments.build
+		# end
 		#@comment = @ad.comments.new
 	end
 
