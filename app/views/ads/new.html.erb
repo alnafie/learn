@@ -28,10 +28,20 @@
 
 	<input type="text" name="ad[make]" /><br/>
 
-	<input type="text" name="ad[comments_attributes][][text]" /><br/>
-	<input type="text" name="ad[comments_attributes][][text]" /><br/>
-	<input type="text" name="ad[comments_attributes][][text]" /><br/>
-	<input type="text" name="ad[comments_attributes][][text]" /><br/>
+	<div id="comments">
+		<input type="text" name="ad[comments_attributes][][text]" /><br/>
+	</div>
+	<a id="add_comment" href="#">add new comment</a><br/>
 
 	<input type="submit" />
 </form>
+
+<script type="text/javascript">
+
+$("a#add_comment").click(function() {
+	var html = "<input type='text' name='ad[comments_attributes][][text]' /><br/>"
+	document.getElementById('comments').insertAdjacentHTML('beforeend', html)
+
+})
+
+</script>
