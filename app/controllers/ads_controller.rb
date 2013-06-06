@@ -14,17 +14,19 @@ class AdsController < ApplicationController
 
 	def new
 		@ad = Ad.new
-		comment = @ad.comments.build
+		3.times do 
+			comment = @ad.comments.build
+		end
 		#@comment = @ad.comments.new
 	end
 
 	def create
-		#yay
-		@ad = Ad.new(params[:ad])
+		yay
+		#@ad = Ad.new(params[:ad])
 		#@comment = @ad.comments.new(params[:comment])
 
 		#@comment.save
-		@ad.save
+		#@ad.save
 	end
 
 end
